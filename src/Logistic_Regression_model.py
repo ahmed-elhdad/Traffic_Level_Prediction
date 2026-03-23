@@ -6,6 +6,9 @@ from sklearn.pipeline import Pipeline
 from sklearn.linear_model import LogisticRegression
 import pandas as pd
 
+from feature_eng import feature_eng
+
+feature_eng()
 data = pd.read_csv("../data/cleaned_traffic_data.csv")
 
 X = data[["hour", "day", "month", "dayofweek", "is_weekend", "rush_hour", "is_holiday"]]
@@ -14,6 +17,7 @@ y = data["Traffic"]
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42
 )
+
 
 numeric = ["hour", "day", "month", "dayofweek"]
 
@@ -44,3 +48,7 @@ y_pred = grid_model.predict(X_test)
 print(classification_report(y_test, y_pred))
 print(confusion_matrix(y_test, y_pred))
 print(grid_model.score(X_test, y_test) * 100)
+import joblib
+
+joblib.dump(grid_model, "models/Logistic_Regression_model.pkl")
+print("Model Trained")
