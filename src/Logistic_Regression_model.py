@@ -6,9 +6,6 @@ from sklearn.pipeline import Pipeline
 from sklearn.linear_model import LogisticRegression
 import pandas as pd
 
-from feature_eng import feature_eng
-
-feature_eng()
 data = pd.read_csv("../data/cleaned_traffic_data.csv")
 
 X = data[["hour", "day", "month", "dayofweek", "is_weekend", "rush_hour", "is_holiday"]]

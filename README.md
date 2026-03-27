@@ -52,18 +52,21 @@ The project relies on the following key Python libraries:
    ```
    python src/clean_data.py
    ```
-
-2. Train the model:
+2. Enter the src folder:
    ```
-   python src/Logistic_Regression_model.py
+   cd src
    ```
-
-3. Launch the Streamlit app:
+3. Train the model:
    ```
-   streamlit run src/main.py
+   python Logistic_Regression_model.py
    ```
 
-4. Open your browser and go to the provided URL to use the prediction app.
+4. Launch the Streamlit app:
+   ```
+   streamlit run main.py
+   ```
+
+5. Open your browser and go to the provided URL to use the prediction app.
 
 ## How It Works
 

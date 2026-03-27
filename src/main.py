@@ -33,8 +33,8 @@ if st.button("Predict"):
     )
     prediction_result = model.predict(data)
     if prediction_result == 0:
-        result = "No Heavy Traffic Today"
+        result = "No Heavy Traffic Now"
     else:
-        result = "Heavy Traffic Today"
+        result = "Heavy Traffic Now"
 
     st.success(result)

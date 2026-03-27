@@ -31,7 +31,7 @@ def clean_data():
     df["dayofweek"] = pd.to_datetime(df["DateTime"]).dt.dayofweek
     df["cars_count"] = df["Vehicles"]
     df["Traffic"] = df["cars_count"].apply(lambda x: 1 if x > 20 else 0)
-    df["is_weekend"] = df["dayofweek"].apply(lambda x: 1 if x == 1 | 7 else 0)
+    df["is_weekend"] = df["dayofweek"].apply(lambda x: 1 if x in [5, 6] else 0)
     df["rush_hour"] = df["hour"].apply(
         lambda x: 1 if x in finish_and_go_work_times else 0
     )
